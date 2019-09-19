@@ -8,7 +8,7 @@ pipeline {
         }
     stage('codeQuality & analysis') {
         steps {
-                withSonarQubeEnv('My SonarQube Server') {
+                withSonarQubeEnv('sonarrunner2.4') {
                     // Optionally use a Maven environment you've configured already
                     withMaven(maven:'Maven 3.0.4') {
                         sh 'mvn clean package sonar:sonar'
