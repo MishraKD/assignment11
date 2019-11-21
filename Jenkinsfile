@@ -45,7 +45,11 @@ agent any
             
 stage('DeployToProduction') {
              steps {
-		      git url: "${GIT_URL}"
+		      
+		     
+		     
+		     sh 'kubectl delete deployment nginx-deployment'
+		     git url: "${GIT_URL}"
 		  
             
              kubernetesDeploy(
