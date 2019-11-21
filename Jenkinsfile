@@ -48,7 +48,7 @@ stage('DeployToProduction') {
 		      
 		     
 		     
-		     sh 'kubectl delete deployment nginx-deployment'
+		    // sh 'kubectl delete deployment nginx-deployment'
 		     git url: "${GIT_URL}"
 		  
             
