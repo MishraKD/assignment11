@@ -56,7 +56,7 @@ stage('DeployToProduction') {
 		     
 		    
 
-                    kubeconfigId: 'kubeconfig1',
+                    kubeconfigId: 'kubeconfig',
 
                     configs: 'deploymentfile.yml',
 
