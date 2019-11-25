@@ -47,6 +47,7 @@ agent any
             
 stage('DeployToProduction') {
              steps {
+		     script {
 		     
 		     
 		      
@@ -74,7 +75,7 @@ stage('DeployToProduction') {
 
             }
 		}
-//}
+}
 		
 		stage('performance Testing') {
 		        steps {
