@@ -2,7 +2,7 @@ pipeline {
 	
 	environment {
     GIT_URL="https://github.com/MishraKD/assin11.git"
-    Deployment_Del="kubectl delete deployment nginx-deployment"
+    DEPLOY_DEL="kubectl delete deployment nginx-deployment"
 		
 	}
 	
@@ -54,7 +54,7 @@ stage('DeployToProduction') {
 		     
 		     when (nginx-deployment){
 			     
-			   ${env.Deployment_Del}
+			   ${env.DEPLOY_DEL}
 		     
 		     }
 		     
