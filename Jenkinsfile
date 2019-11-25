@@ -2,6 +2,8 @@ pipeline {
 	
 	environment {
     GIT_URL="https://github.com/MishraKD/assin11.git"
+    Deployment_Del="kubectl delete deployment nginx-deployment"
+		
 	}
 	
 agent any	
@@ -45,12 +47,14 @@ agent any
             
 stage('DeployToProduction') {
              steps {
+		     
+		     
 		      
 		     
 		     
 		     when (nginx-deployment){
 			     
-			     kubectl delete deployment nginx-deployment
+			   ${env.Deployment_Del}
 		     
 		     }
 		     
