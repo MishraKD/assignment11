@@ -48,12 +48,12 @@ stage('DeployToProduction') {
 		      
 		     
 		     
-		     if(nginx-deployment){
+		     when (nginx-deployment){
 			     
 			     kubectl delete deployment nginx-deployment
 		     
 		     }
-		     else{
+		     
 		     git url: "${GIT_URL}"
 		  
             
@@ -70,7 +70,7 @@ stage('DeployToProduction') {
 
             }
 		}
-}
+//}
 		
 		stage('performance Testing') {
 		        steps {
