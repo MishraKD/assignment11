@@ -51,10 +51,10 @@ stage('DeployToProduction') {
    // sh "kubectl delete deployment nginx-deployment"
  //}
 	
-	podTemplate(label: app){
-		sh "kubectl delete deployment nginx-deployment"
+	//podTemplate(label: app){
+		//sh "kubectl delete deployment nginx-deployment"
 		
-	}
+	//}
              steps {
 		     //script {
 		     
