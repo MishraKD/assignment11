@@ -47,9 +47,14 @@ agent any
             
 stage('DeployToProduction') {
 	
-	container('nginx-deployment-6dd86d77d-jtdhq') {
-    sh "kubectl delete deployment nginx-deployment"
-  }
+	//container('nginx-deployment-6dd86d77d-jtdhq') {
+   // sh "kubectl delete deployment nginx-deployment"
+ //}
+	
+	podTemplate(label: app){
+		sh "kubectl delete deployment nginx-deployment"
+		
+	}
              steps {
 		     //script {
 		     
