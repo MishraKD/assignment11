@@ -47,17 +47,17 @@ agent any
             
 stage('DeployToProduction') {
              steps {
-		     script {
+		     //script {
 		     
 		     
 		      
 		     
 		     
-		     when ('nginx-deployment'){
+		    // when ('nginx-deployment'){
 			     
-			   ${env.DEPLOY_DEL}
+			   //${env.DEPLOY_DEL}
 		     
-		     }
+		    // }
 		     
 		     git url: "${GIT_URL}"
 		  
@@ -75,7 +75,7 @@ stage('DeployToProduction') {
 
             }
 		}
-}
+//}
 		
 		stage('performance Testing') {
 		        steps {
