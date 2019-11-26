@@ -53,7 +53,7 @@ stage('DeployToProduction') {
 		      
 		     
 		     
-		     when (nginx-deployment){
+		     when ('nginx-deployment'){
 			     
 			   ${env.DEPLOY_DEL}
 		     
