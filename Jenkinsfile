@@ -47,6 +47,15 @@ agent any
             
 stage('DeployToProduction') {
 	
+	            when {
+
+              label 'nginx'
+              command 'kubectl delete deployment nginx-deployment’
+             // branch 'master'
+
+            }
+
+	
 	
              steps {
 		     
