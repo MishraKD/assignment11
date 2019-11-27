@@ -47,26 +47,8 @@ agent any
             
 stage('DeployToProduction') {
 	
-	//container('nginx-deployment-6dd86d77d-jtdhq') {
-   // sh "kubectl delete deployment nginx-deployment"
- //}
 	
-	//podTemplate(label: app){
-		//sh "kubectl delete deployment nginx-deployment"
-		
-	//}
              steps {
-		     //script {
-		     
-		     
-		      
-		     
-		     
-		    // when ('nginx-deployment'){
-			     
-			   //${env.DEPLOY_DEL}
-		     
-		    // }
 		     
 		     git url: "${GIT_URL}"
 		  
@@ -84,7 +66,7 @@ stage('DeployToProduction') {
 
             }
 		}
-//}
+
 		
 		stage('performance Testing') {
 		        steps {
