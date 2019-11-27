@@ -47,13 +47,13 @@ agent any
             
 stage('DeployToProduction') {
 	
-	            when {
+	            //when {
 
-              label 'nginx'
+              //label 'nginx'
             //  command 'kubectl delete deployment nginx-deployment’
              // branch 'master'
 
-            }
+           // }
 
 	
 	
