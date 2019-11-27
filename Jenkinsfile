@@ -50,7 +50,7 @@ stage('DeployToProduction') {
 	            when {
 
               label 'nginx'
-              command 'kubectl delete deployment nginx-deployment’
+            //  command 'kubectl delete deployment nginx-deployment’
              // branch 'master'
 
             }
