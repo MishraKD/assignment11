@@ -88,6 +88,7 @@ stage('DeployToProduction') {
             }
 		}
 	     }
+}
 		
 		stage('performance Testing') {
 		        steps {
