@@ -58,8 +58,16 @@ stage('DeployToProduction') {
 	
 	
              steps {
+		     script {
+                  def nglabels = label 'nginx'
+                if(nglabels){
+                 
+                       // sh 'kubectl delete deployment nginx-deployment'
+                      // podTemplate pod :"${env.DEPLOY_DEL}"
+                      label nginx :"${env.DEPLOY_DEL}"
+                      git url: "${GIT_URL}"
 		     
-		     git url: "${GIT_URL}"
+		    // git url: "${GIT_URL}"
 		  
             
              kubernetesDeploy(
@@ -72,10 +80,14 @@ stage('DeployToProduction') {
 
                     enableConfigSubstitution: true   
              )
+			 }
+			     else{
+			     echo 'deployment failed'
+				     
 
             }
 		}
-
+	     }
 		
 		stage('performance Testing') {
 		        steps {
