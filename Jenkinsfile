@@ -9,28 +9,28 @@ pipeline {
 agent any	
 	stages{
 		
-		if{
-			stage('GITCheckout') {
-    steps {
-        git branch: "${params.SPECIFIER}", url: "${GIT_URL}"
-    }
-}
-		  }
-		else{
-			
-			stage('nexusRepository'){
+		//if{
+		//	stage('GITCheckout') {
+   // steps {
+       // git branch: "${params.SPECIFIER}", url: "${GIT_URL}"
+    //}
+//}
+//		  }
+//		else{
+//			
+//			stage('nexusRepository'){
 				
-				steps{
+//				steps{
 					
-					nexusPublisher nexusInstanceId:  'localNexus' , nexusRepositoryId:  'releases'
+//					nexusPublisher nexusInstanceId:  'localNexus' , nexusRepositoryId:  'releases'
 					
-					
-				}
-			}
+//					
+//				}
+//			}
 			
 			
 			
-		}
+		//}
 		           
 				    stage('codeQuality & analysis') {
 		        steps {
