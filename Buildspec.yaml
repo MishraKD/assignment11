@@ -15,7 +15,8 @@ phases:
       - apt-get install -y sbt
   pre_build:
     commands:
-      - REPOSITORY_NAME=hello-play
+      - REPOSITORY_NAME=shopingapirepo
+
   build:
     commands:
       - printf '{"repository":"%s"}' $REPOSITORY_NAME > build.json
