@@ -16,7 +16,7 @@ phases:
       - apt-get install -y sbt
   pre_build:
     commands:
-      - REPOSITORY_NAME=shopingapirepo
+      - REPOSITORY_NAME=MishraKD/assin11
 
   build:
     commands:
