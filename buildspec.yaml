@@ -27,6 +27,6 @@ phases:
       - sbt dist
 artifacts:
   files:
-    - src/target/universal/*
+    - target/Eureka-Server-0.0.1-SNAPSHOT.war
     - Dockerfile
     - build.json
