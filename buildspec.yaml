@@ -20,11 +20,7 @@ phases:
 
   build:
     commands:
-      - printf '{"repository":"%s"}' $REPOSITORY_NAME > build.json
-      - cd ./src/
-      - sbt compile
-      - sbt test
-      - sbt dist
+      - mvn package
 artifacts:
   files:
     - target/Eureka-Server-0.0.1-SNAPSHOT.war
