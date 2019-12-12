@@ -9,6 +9,96 @@ pipeline {
 agent any	
 	stages{
 		
+		stage('codeQuality & analysis') {
+			        steps {
+					  git url: "${GIT_URL}"
+					//git url: "${GIT_URL}"
+					//git url: 'https://github.com/MishraKD/assin11.git'
+					
+			                withSonarQubeEnv('sonar') {
+						
+			                   
+			                    withMaven(maven:'M2_HOME') {
+						    sh 'mvn clean package sonar:sonar'
+			                        
+			                    }
+			                }
+			            }
+			       }
+
+
+
+
+
+
+
+
+    stage('SAST') {
+	        steps {
+	                
+              sh '/var/jenkins_home/yasca/yascaConfigScript/yascaConfigScritp.sh'
+	                       
+	                    
+	                
+	            }
+	    }
+
+
+         
+
+		          	    
+
+
+
+
+            
+stage('DeployToProduction') {
+	
+	            //when {
+
+              //label 'nginx'
+            //  command 'kubectl delete deployment nginx-deployment’
+             // branch 'master'
+
+           // }
+
+	
+	
+             steps {
+		     script {
+                  def nglabels = label 'nginx'
+                if(nglabels){
+                 
+                       // sh 'kubectl delete deployment nginx-deployment'
+                      // podTemplate pod :"${env.DEPLOY_DEL}"
+                      label nginx :"${env.DEPLOY_DEL}"
+                      git url: "${GIT_URL}"
+		     
+		    // git url: "${GIT_URL}"
+		  
+            
+             kubernetesDeploy(
+		     
+		    
+
+                    kubeconfigId: 'kubeconfig',
+
+                    configs: 'deploymentfile.yml',
+
+                    enableConfigSubstitution: true   
+             )
+			 }
+			     else{
+			     echo 'deployment failed'
+				     
+
+            }
+		}
+	     }
+}
+		
+
+		
 		        
 
 		
