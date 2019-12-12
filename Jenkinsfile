@@ -10,22 +10,6 @@ agent any
 	stages{
 		
 		        
-				    stage('codeQuality & analysis') {
-		        steps {
-				  git url: "${GIT_URL}"
-				//git url: "${GIT_URL}"
-				//git url: 'https://github.com/MishraKD/assin11.git'
-				
-		                withSonarQubeEnv('sonar') {
-					
-		                   
-		                    withMaven(maven:'M2_HOME') {
-					    sh 'mvn clean package sonar:sonar'
-		                        
-		                    }
-		                }
-		            }
-		       }
 
     stage('SAST') {
 	        steps {
