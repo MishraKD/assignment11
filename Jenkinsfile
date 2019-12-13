@@ -119,7 +119,13 @@ stage('DeployToProduction') {
 		                
 		            }
 		    }
-					    
+				stage('soapui') {
+	        steps {
+			
+			
+		}
+				}
+	    
 
 					    
 
