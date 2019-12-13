@@ -119,16 +119,7 @@ stage('DeployToProduction') {
 		                
 		            }
 		    }
-					    stage('soapui') {
-	        steps {
-			echo 'soapui'
-			
-	               sh '/var/jenkins_home/SoapUI-5.2.1/bin/testrunner.sh -s"Sample REST Project 1" -c"TestCase 1" -r /var/jenkins_home/workspace/deployKubeApp/REST-Project-1-soapui-project.xml' 
-            
-		}
-           }
-
-	
+					    
 
 					    
 
