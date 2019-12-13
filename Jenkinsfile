@@ -123,10 +123,10 @@ stage('DeployToProduction') {
 	        steps {
 			echo 'soapui'
 			//sh '/var/jenkins_home/SoapUI-5.2.1/bin/testrunner.sh -s"TestSuite 1" -c"TestCase 1" -r /var/jenkins_home/workspace/KuberTesting2_SoapUi/REST-Project-1-soapui-project.xml'
-	               //sh '/var/jenkins_home/SoapUI-5.2.1/bin/testrunner.sh -s"TestSuite 1" -c"TestCase 1" -r /var/jenkins_home/workspace/deployKubeApp/REST-Project-1-soapui-project.xml' 
+	               sh '/var/jenkins_home/SoapUI-5.2.1/bin/testrunner.sh -s"TestSuite 1" -c"TestCase 1" -r /var/jenkins_home/workspace/deployKubeApp/REST-Project-1-soapui-project.xml' 
             
 			//sh '/var/jenkins_home/SoapUI-5.2.1/bin/testrunner.sh -s"TestSuite 1" -c"TestCase 1" -r /var/jenkins_home/SoapUI-5.2.1/ HelloWS-soapui-project.xml'
-			sh '/var/jenkins_home/SoapUI-5.2.1/bin/testrunner.sh '
+			//sh '/var/jenkins_home/SoapUI-5.2.1/bin/testrunner.sh '
              // /var/jenkins_home/workspace/soaptest/REST-Project-1-soapui-project.xml' /var/jenkins_home/SoapUI-5.2.1/ HelloWS-soapui-project.xml
 		}
            }
