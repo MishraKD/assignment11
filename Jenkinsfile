@@ -54,13 +54,7 @@ agent any
             
 stage('DeployToProduction') {
 	
-	            //when {
-
-              //label 'nginx'
-            //  command 'kubectl delete deployment nginx-deployment’
-             // branch 'master'
-
-           // }
+	            
 
 	
 	
@@ -71,7 +65,7 @@ stage('DeployToProduction') {
                  
                        // sh 'kubectl delete deployment nginx-deployment'
                       // podTemplate pod :"${env.DEPLOY_DEL}"
-                      label nginx :"${env.DEPLOY_DEL}"
+                     nginx :"${env.DEPLOY_DEL}"
                       git url: "${GIT_URL}"
 		     
 		    // git url: "${GIT_URL}"
