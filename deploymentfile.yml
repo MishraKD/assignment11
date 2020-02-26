@@ -5,6 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
+  namespace: nginx
   replicas: 1
   selector:
     matchLabels:
