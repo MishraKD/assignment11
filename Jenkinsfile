@@ -8,55 +8,8 @@ pipeline {
 	
 agent any	
 	stages{
-		
-		stage('codeQuality & analysis') {
-			        steps {
-					  git url: "${GIT_URL}"
-					//git url: "${GIT_URL}"
-					//git url: 'https://github.com/MishraKD/assin11.git'
-					
-			                withSonarQubeEnv('sonar') {
-						
-			                   
-			                    withMaven(maven:'M2_HOME') {
-						    sh 'mvn clean package sonar:sonar'
-			                        
-			                    }
-			                }
-			            }
-			       }
-
-
-
-
-
-
-
-
-    stage('SAST') {
-	        steps {
-	                
-              sh '/var/jenkins_home/yasca/yascaConfigScript/yascaConfigScritp.sh'
-	                       
-	                    
-	                
-	            }
-	    }
-
-
-         
-
-		          	    
-
-
-
-
             
 stage('DeployToProduction') {
-	
-	            
-
-	
 	
              steps {
 		     script {
@@ -74,8 +27,8 @@ stage('DeployToProduction') {
              kubernetesDeploy(
 		     
 		    
-
-                    kubeconfigId: 'kubeconfig',
+                    credentialsType: 'KubeConfig',
+                    //kubeconfigId: 'kubeconfig',
                     kubeConfig: [path: '/var/jenkins_home/workspace/.kube/config'],
                     configs: 'deploymentfile.yml',
 
