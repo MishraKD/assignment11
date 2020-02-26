@@ -35,11 +35,11 @@ stage('DeployToProduction') {
                     enableConfigSubstitution: true   
              )
 			 }
-			     else{
-			     echo 'deployment failed'
+			    // else{
+			    // echo 'deployment failed'
 				     
 
-            }
+           // }
 		}
 	     }
 }
