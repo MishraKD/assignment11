@@ -2,7 +2,7 @@ pipeline {
 	
 	environment {
     GIT_URL="https://github.com/MishraKD/assin11.git"
-    DEPLOY_DEL="kubectl delete deployment nginx-deployment"
+    //DEPLOY_DEL="kubectl delete deployment nginx-deployment"
 		
 	}
 	
@@ -18,7 +18,7 @@ stage('DeployToProduction') {
                  
                        // sh 'kubectl delete deployment nginx-deployment'
                       // podTemplate pod :"${env.DEPLOY_DEL}"
-                     nginx :"${env.DEPLOY_DEL}"
+                     //nginx :"${env.DEPLOY_DEL}"
                       git url: "${GIT_URL}"
 		     
 		    // git url: "${GIT_URL}"
