@@ -11,7 +11,7 @@ agent any
 stage('DeployToProduction') {
 	
              steps {
-		      git url: "${GIT_URL}"
+		      
 		     
 		kubernetesDeploy(
                     kubeconfigId: 'kubeconfiggit',
