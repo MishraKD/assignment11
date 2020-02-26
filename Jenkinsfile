@@ -12,14 +12,14 @@ agent any
 stage('DeployToProduction') {
 	
              steps {
-		     script {
-                  def nglabels = label 'nginx'
-                if(nglabels){
+		     //script {
+                  //def nglabels = label 'nginx'
+                //if(nglabels){
                  
                        // sh 'kubectl delete deployment nginx-deployment'
                       // podTemplate pod :"${env.DEPLOY_DEL}"
                      //nginx :"${env.DEPLOY_DEL}"
-                      git url: "${GIT_URL}"
+                     // git url: "${GIT_URL}"
 		     
 		    // git url: "${GIT_URL}"
 		  
