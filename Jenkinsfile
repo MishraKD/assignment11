@@ -27,9 +27,9 @@ stage('DeployToProduction') {
              kubernetesDeploy(
 		     
 		    
-                    credentialsType: 'KubeConfig',
-                    //kubeconfigId: 'kubeconfig',
-                    kubeConfig: [path: '/var/jenkins_home/workspace/.kube/config'],
+                    //credentialsType: 'KubeConfig',
+                    kubeconfigId: 'kubeconfiggit',
+                    //kubeConfig: [path: '/var/jenkins_home/workspace/.kube/config'],
                     configs: 'deploymentfile.yml',
 
                     enableConfigSubstitution: true   
