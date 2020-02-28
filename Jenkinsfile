@@ -11,10 +11,10 @@ agent any
 stage('DeployToProduction') {
 	
              steps {
-		     sshagent(['cd03b339-0eb5-462a-95e8-7903536ffb9a']) {
+		     sh "ssh -i "/var/jenkins_home/workspace/deployKubeApp/git.pem"  git@52.214.113.246"
                     script{
                         try{
-				sh "ssh -tt git@52.214.113.246"
+				
 			    sh  "pwd"	
                          
                         }catch(error){
@@ -23,7 +23,7 @@ stage('DeployToProduction') {
                     }
 		     
 		
-	     }
+	     
 	}
 }
 }
