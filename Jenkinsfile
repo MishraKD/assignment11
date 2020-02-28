@@ -14,10 +14,10 @@ stage('DeployToProduction') {
 		     sshagent(['kops-machine']) {
                     script{
                         try{
-                            sh "ssh git@52.214.113.246:22"
+                            sh "ssh -A git@52.214.113.246:22"
 			    sh  "pwd"
                         }catch(error){
-                            sh "ssh git@52.214.113.246:22 "
+                            sh "ssh -A git@52.214.113.246:22 "
                         }
                     }
 		     
