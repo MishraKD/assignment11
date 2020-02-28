@@ -11,20 +11,21 @@ agent any
 stage('DeployToProduction') {
 	
              steps {
-		      
+		     sshagent(['kops-machine']) {
+                    script{
+                        try{
+                            sh "ssh git@172.131.0.110:22 pwd"
+                        }catch(error){
+                            sh "ssh git@172.131.0.110:22 pwd"
+                        }
+                    }
 		     
-		kubernetesDeploy(
-                    kubeconfigId: 'kubeconfiggit',
-                    configs: 'deploymentfile.yml',
-                    enableConfigSubstitution: true)
-			 
-			   
-		}
+		
 	     }
 	}
 }
-		
-
+	}	
+	}
 		
 		        
 
