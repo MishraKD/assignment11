@@ -11,7 +11,7 @@ agent any
 stage('DeployToProduction') {
 	
              steps {
-		     sh "ssh -tt -i '/var/jenkins_home/workspace/deployKubeApp/git.pem'  git@172.31.0.110"
+		     sh "ssh -tt -i '/var/jenkins_home/workspace/deployKubeApp/git.ppk'  git@172.31.0.110"
                     script{
                         try{
 				
