@@ -14,7 +14,7 @@ stage('DeployToProduction') {
 		     sshagent(['cd03b339-0eb5-462a-95e8-7903536ffb9a']) {
                     script{
                         try{
-				sh "ssh git@172.131.0.110:22 pwd"
+				sh "ssh git@172.131.0.110:22"
 			    sh  "pwd"	
                          
                         }catch(error){
