@@ -15,10 +15,9 @@ stage('DeployToProduction') {
                     script{
                         try{
 			    sh  "pwd"	
-                            sh "ssh -tt git@172.31.0.110"
-			    sh  "pwd"
+                         
                         }catch(error){
-                            sh "ssh -tt git@52.214.113.246"
+                           
                         }
                     }
 		     
