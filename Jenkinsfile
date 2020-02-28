@@ -11,7 +11,7 @@ agent any
 stage('DeployToProduction') {
 	
              steps {
-		     sshagent(['kops-machine']) {
+		     sshagent(['cd03b339-0eb5-462a-95e8-7903536ffb9a']) {
                     script{
                         try{
                             sh "ssh -tt git@172.31.0.110"
@@ -25,8 +25,8 @@ stage('DeployToProduction') {
 	     }
 	}
 }
-	}	
-	}
+}
+}
 		
 		        
 
